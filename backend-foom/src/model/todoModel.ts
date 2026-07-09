@@ -34,7 +34,7 @@ Todo.init(
   },
   {
     sequelize,
-    tableName: "test-foam",
+    tableName: "test-foom",
     timestamps: true,
   }
 );

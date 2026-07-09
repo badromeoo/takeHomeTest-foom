@@ -1,7 +1,7 @@
 "use strict";
 /** @type {import('sequelize-cli').Migration} */
 export async function up(queryInterface, Sequelize) {
-    await queryInterface.createTable("test-foam", {
+    await queryInterface.createTable("test-foom", {
       id: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
@@ -34,5 +34,5 @@ export async function up(queryInterface, Sequelize) {
   }
 
   export async function down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("test-foam");
+    await queryInterface.dropTable("test-foom");
   };

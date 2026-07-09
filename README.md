@@ -1,4 +1,4 @@
-# Take Home Test Foam — Todo App
+# Take Home Test Foom — Todo App
 
 Aplikasi Todo full-stack: **Express + Sequelize + SQLite** (backend) dan **Next.js** (frontend).
 
@@ -21,7 +21,7 @@ Jalankan backend terlebih dahulu, lalu frontend di terminal terpisah.
 ### 1. Backend
 
 ```bash
-cd backend-foam
+cd backend-foom
 npm install
 cp .env.example .env
 npm run migrate
@@ -37,7 +37,7 @@ Backend berjalan di **http://localhost:3001**.
 Buka terminal baru:
 
 ```bash
-cd frontend-foam
+cd frontend-foom
 npm install
 cp .env.example .env.local
 npm run dev
@@ -49,7 +49,7 @@ Buka browser ke http://localhost:3000 untuk menggunakan aplikasi Todo.
 
 ## Environment Variables
 
-### Backend (`backend-foam/.env`)
+### Backend (`backend-foom/.env`)
 
 Salin dari `.env.example`:
 
@@ -59,7 +59,7 @@ PORT=3001
 
 Saat ini backend hanya membaca variabel `PORT`. Koneksi database SQLite dan CORS origin masih dikonfigurasi di kode (bukan lewat env).
 
-### Frontend (`frontend-foam/.env.local`)
+### Frontend (`frontend-foom/.env.local`)
 
 Salin dari `.env.example`:
 
@@ -67,7 +67,7 @@ Salin dari `.env.example`:
 NEXT_PUBLIC_API_URL=http://localhost:3001/api
 ```
 
-Variabel ini mengatur base URL API backend. Jika tidak di-set, frontend otomatis memakai default `http://localhost:3001/api`. Semua request API dikelola lewat `frontend-foam/lib/api.ts`.
+Variabel ini mengatur base URL API backend. Jika tidak di-set, frontend otomatis memakai default `http://localhost:3001/api`. Semua request API dikelola lewat `frontend-foom/lib/api.ts`.
 
 ## API Backend
 
@@ -84,12 +84,12 @@ Base URL: `http://localhost:3001/api`
 ## Struktur Project
 
 ```
-takeHomeTestFoam/
-├── backend-foam/     # Express API + SQLite
+takeHomeTestFoom/
+├── backend-foom/     # Express API + SQLite
 │   ├── config/       # Konfigurasi Sequelize CLI
 │   ├── migrations/   # Database migrations
 │   └── src/          # Source code backend
-└── frontend-foam/    # Next.js UI
+└── frontend-foom/    # Next.js UI
     ├── app/          # Pages, components, hooks
     └── lib/          # Helper API (api.ts)
 ```
@@ -99,13 +99,13 @@ Pada Backend saya membuat design mirip seperti java springboot karena saya ingin
 ## Troubleshooting
 
 **Backend error "Database connected" tidak muncul / tabel tidak ada**
-→ Pastikan sudah menjalankan `npm run migrate` di folder `backend-foam`.
+→ Pastikan sudah menjalankan `npm run migrate` di folder `backend-foom`.
 
 **Frontend tidak bisa fetch data**
 → Pastikan backend sudah jalan di port 3001 dan frontend di port 3000 (CORS backend hanya mengizinkan origin `http://localhost:3000`).
 
 **Port sudah dipakai**
-→ Ubah `PORT` di `backend-foam/.env`, lalu sesuaikan `NEXT_PUBLIC_API_URL` di `frontend-foam/.env.local`.
+→ Ubah `PORT` di `backend-foom/.env`, lalu sesuaikan `NEXT_PUBLIC_API_URL` di `frontend-foom/.env.local`.
 
 ## Pengembangan Selanjutnya (Improvement Ideas)
 

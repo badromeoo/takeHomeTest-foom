@@ -5,7 +5,7 @@ Antarmuka Todo berbasis **Next.js 16**, **React 19**, dan **Tailwind CSS**.
 ## Prasyarat
 
 - [Node.js](https://nodejs.org/) v18 atau lebih baru
-- Backend API sudah berjalan di `http://localhost:3001` (lihat [README backend](../backend-foam/README.md))
+- Backend API sudah berjalan di `http://localhost:3001` (lihat [README backend](../backend-foom/README.md))
 
 ## Setup
 
@@ -45,7 +45,7 @@ Semua request API dikelola lewat helper `lib/api.ts` — tidak perlu mengubah UR
 ## Struktur Utama
 
 ```
-frontend-foam/
+frontend-foom/
 ├── app/
 │   ├── page.tsx              # Halaman daftar todo
 │   ├── formCreate/           # Form buat todo
