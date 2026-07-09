@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link"; // 1. Import Link dari Next.js
+import Link from "next/link"; 
 
 type CardProps = {
   id: number;
@@ -35,7 +35,6 @@ function Card({ id, title, description, completed, onToggleStatus, onDelete }: C
         <div className="grid grid-cols-2 gap-2">
           
           {/* 3. Tombol Update menggunakan Link untuk navigasi */}
-          {/* Ubah '/edit/' sesuai dengan struktur folder routing Next.js Anda */}
           <Link 
             href={`/formUpdate/${id}`} 
             className="px-4 py-2 rounded text-white font-medium bg-blue-600 hover:bg-blue-700 transition-colors text-center block"
