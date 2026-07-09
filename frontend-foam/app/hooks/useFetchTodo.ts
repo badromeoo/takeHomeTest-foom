@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { apiUrl } from '../../lib/api';
 
 interface TodoData {
   title: string;
@@ -12,7 +13,7 @@ export function useFetchTodo(id: string) {
 
   useEffect(() => {
     const fetchOldData = async () => {
-      const res = await fetch(`http://localhost:3001/api/todos/${id}`);
+      const res = await fetch(apiUrl(`/todos/${id}`));
       if (res.ok) {
         const data = await res.json();
         setTodo(data);

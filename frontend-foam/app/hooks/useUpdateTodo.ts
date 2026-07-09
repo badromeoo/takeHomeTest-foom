@@ -1,6 +1,7 @@
 'use client';
 
 import { Dispatch, SetStateAction } from 'react';
+import { apiUrl } from '../../lib/api';
 
 interface Todo {
   id: number;
@@ -17,7 +18,7 @@ export function useUpdateTodo() {
   ) => {
     const nextStatus = !currentStatus;
     try {
-      const response = await fetch(`http://localhost:3001/api/todos/${id}`, {
+      const response = await fetch(apiUrl(`/todos/${id}`), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

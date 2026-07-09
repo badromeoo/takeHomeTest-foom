@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { apiUrl } from '../../lib/api';
 
 export function useUpdateTodoForm() {
   const router = useRouter();
@@ -10,7 +11,7 @@ export function useUpdateTodoForm() {
     title: string,
     description: string
   ) => {
-    const response = await fetch(`http://localhost:3001/api/todos/${id}`, {
+    const response = await fetch(apiUrl(`/todos/${id}`), {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, description }),

@@ -1,12 +1,13 @@
 "use client";
 import TodoForm from"../component/todoForm";
 import { useRouter } from "next/navigation";
+import { apiUrl } from "../../lib/api";
 
 export default function CreateTodoPage() {
   const router = useRouter();
 
   const handleCreateSubmit = async (title: string, description: string) => {
-    const response = await fetch("http://localhost:3001/api/todos", {
+    const response = await fetch(apiUrl("/todos"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, description }),

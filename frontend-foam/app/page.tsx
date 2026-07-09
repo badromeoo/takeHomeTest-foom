@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Card from "./component/Card";
 import { useDeleteTodo } from "./hooks/useDeleteTodo";
 import { useUpdateTodo } from "./hooks/useUpdateTodo";
+import { apiUrl } from "../lib/api";
 
 interface Todo {
   id: number;
@@ -18,7 +19,7 @@ export default function Home() {
   const { handleToggleStatus } = useUpdateTodo();
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/todos", { 
+      const response = await fetch(apiUrl("/todos"), { 
         method: "GET",
         cache: "no-store" 
       });
